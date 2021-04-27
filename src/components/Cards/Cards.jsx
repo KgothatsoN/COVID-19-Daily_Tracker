@@ -14,7 +14,7 @@ const Cards = ({ data: {confirmed, recovered, deaths, lastUpdate}}) => {
             <Grid container spacing={3} justify="center">
                 <Grid item component={Card} xs={12} md={3} className={cx(CSS.card, CSS.infected)}>
                     <CardContent>
-                        <Typography color="textSecondary" gutterBottom>
+                        <Typography color="textPrimary" gutterBottom>
                             Infected
                         </Typography>
                         <Typography variant="h5">
@@ -24,13 +24,13 @@ const Cards = ({ data: {confirmed, recovered, deaths, lastUpdate}}) => {
                             {new Date(lastUpdate).toLocaleDateString()} @ {new Date(lastUpdate).toLocaleTimeString()}
                         </Typography>
                         <Typography variant="body2">
-                            No of Infections
+                            No. of Infections
                         </Typography>
                     </CardContent>
                 </Grid>
                 <Grid item component={Card} xs={12} md={3} className={cx(CSS.card, CSS.recovered)}>
                     <CardContent>
-                        <Typography color="textSecondary" gutterBottom>
+                        <Typography color="textPrimary" gutterBottom>
                             Recovered
                         </Typography>
                         <Typography variant="h5">
@@ -40,13 +40,13 @@ const Cards = ({ data: {confirmed, recovered, deaths, lastUpdate}}) => {
                             {new Date(lastUpdate).toLocaleDateString()} @ {new Date(lastUpdate).toLocaleTimeString()}
                         </Typography>
                         <Typography variant="body2">
-                            No of Recoveries
+                            No. of Recoveries
                         </Typography>
                     </CardContent>
                 </Grid>
                 <Grid item component={Card} xs={12} md={3} className={cx(CSS.card, CSS.deaths)}>
                     <CardContent>
-                        <Typography color="textSecondary" gutterBottom>
+                        <Typography color="textPrimary" gutterBottom>
                             Deaths
                         </Typography>
                         <Typography variant="h5">
@@ -56,7 +56,7 @@ const Cards = ({ data: {confirmed, recovered, deaths, lastUpdate}}) => {
                             {new Date(lastUpdate).toLocaleDateString()} @ {new Date(lastUpdate).toLocaleTimeString()}
                         </Typography>
                         <Typography variant="body2">
-                            No of Deaths
+                            No. of Deaths
                         </Typography>
                     </CardContent>
                 </Grid>

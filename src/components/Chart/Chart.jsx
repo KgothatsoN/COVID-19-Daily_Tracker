@@ -27,7 +27,7 @@ const Chart = ({ data: {confirmed, recovered, deaths}, country }) => {
                         datasets:[{
                             data: dailyData.map(data => data.confirmed), 
                             label: 'Infected', 
-                            borderColor: '#3333ff', 
+                            borderColor: '#33ff', 
                             fill:true
                             },
                             {
@@ -45,7 +45,7 @@ const Chart = ({ data: {confirmed, recovered, deaths}, country }) => {
         confirmed?(
         <Bar 
             data={{labels: ['Infected', 'Recovered','Deaths'], 
-            datasets: [{label: 'People', backgroundColor: ['rgba(0, 0, 255, .5)', 'rgba(255, 0, 0, .5)', 'rgba(0, 255, 0, .5)'],
+            datasets: [{label: 'People', backgroundColor: ['rgba(0, 0, 255)', 'rgba(255, 0, 0)', 'rgba(0, 255, 0)'],
             data: [confirmed.value, recovered.value, deaths.value]}]
             }}
             options={{legend: {display: false}, title: {display: true, text: `Current Covid Rates in ${country}`}}}
@@ -72,17 +72,17 @@ const Chart = ({ data: {confirmed, recovered, deaths}, country }) => {
     return (
         <div className={CSS.container}>
             <div className={CSS.radio}>
-                <FormControl component="fieldset">
-                    <RadioGroup aria-label="gender" name="gender1" row  >
+                <FormControl>
+                    <RadioGroup aria-label="radioButton" name="radioBtn" row>
+                        <FormControlLabel disabled={country ? true : false} value="table" control={<Radio />} label="Table" onChange={(e) => handleChartChange(e.target.value)} />
                         <FormControlLabel disabled={country ? true : false} value="lineGraph" control={<Radio />} label="Line Graph" onChange={(e) => handleChartChange(e.target.value)} />
                         <FormControlLabel value="barGraph" control={<Radio />} label="Bar Graph" onChange={(e) => handleChartChange(e.target.value)} />
-                        <FormControlLabel disabled={country ? true : false} value="table" control={<Radio />} label="Table" onChange={(e) => handleChartChange(e.target.value)} />
                     </RadioGroup>
                 </FormControl>
             </div>
+            { chartName.localeCompare("table") ? null : <Table data={tableData}/>}
             { chartName.localeCompare("lineGraph") ? null : (country ? null : lineGraph)}
             { chartName.localeCompare("barGraph") ? null : barGraph}
-            { chartName.localeCompare("table") ? null : <Table data={tableData} />}
         </div>
     );
 }

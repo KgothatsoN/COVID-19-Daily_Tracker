@@ -4,6 +4,7 @@ import Chart from './components/Chart/Chart';
 import CountryPicker from './components/CountryPicker/CountryPicker';
 import CSS from './App.module.css';
 import {fetchData} from './api'
+import Header from './components/Header/Header';
 
 class App extends React.Component   {
     state = {
@@ -26,6 +27,7 @@ class App extends React.Component   {
         const {data, country} = this.state
         return  (
             <div className={CSS.container}>
+                <Header title={"COVID-19 DAILY TRACKER"}/>
                 <Cards data={data}/>
                 <CountryPicker handleChange={this.handleChange}/> 
                 <Chart data={data} country={country}/>   

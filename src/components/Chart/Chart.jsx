@@ -26,13 +26,13 @@ const Chart = ({ data: {confirmed, recovered, deaths}, country }) => {
                         labels: dailyData.map(({date}) => new Date(date).toLocaleDateString()), 
                         datasets:[{
                             data: dailyData.map(data => data.confirmed), 
-                            label: 'Infected', 
+                            label: 'Total Cases', 
                             borderColor: '#33ff', 
                             fill:true
                             },
                             {
                             data: dailyData.map(data => data.deaths), 
-                            label: 'Deaths', 
+                            label: 'Total Deaths', 
                             borderColor: 'red',
                             backgroundColor: 'rgba(255, 0, 0, .5', 
                             fill:true
@@ -44,8 +44,8 @@ const Chart = ({ data: {confirmed, recovered, deaths}, country }) => {
     const barGraph = (
         confirmed?(
         <Bar 
-            data={{labels: ['Infected', 'Recovered','Deaths'], 
-            datasets: [{label: 'People', backgroundColor: ['rgba(0, 0, 255)', 'rgba(255, 0, 0)', 'rgba(0, 255, 0)'],
+            data={{labels: ['Total Cases', 'Recovered','Total Deaths'], 
+            datasets: [{label: 'Infected', backgroundColor: ['rgb(0, 0, 255)', 'rgb(0, 255, 0)', 'rgb(255, 0, 0)'],
             data: [confirmed.value, recovered.value, deaths.value]}]
             }}
             options={{legend: {display: false}, title: {display: true, text: `Current Covid Rates in ${country}`}}}

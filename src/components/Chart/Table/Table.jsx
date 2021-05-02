@@ -72,9 +72,9 @@ function Table({ data }) {
         <div className={CSS.table}>
             <tr>
                 <th className={CSS.country}>Country</th>
-                <th className={CSS.infected} onClick={sortConfirmed}>Infected</th>
+                <th className={CSS.infected} onClick={sortConfirmed}>Total Cases</th>
                 <th className={CSS.recovered} onClick={sortRecovered}>Recovered</th>
-                <th className={CSS.deaths} onClick={sortDeaths}>Deaths</th>
+                <th className={CSS.deaths} onClick={sortDeaths}>Total Deaths</th>
             </tr>
             <Populate rows={rows} />
         </div >

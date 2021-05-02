@@ -15,16 +15,13 @@ const Cards = ({ data: {confirmed, recovered, deaths, lastUpdate}}) => {
                 <Grid item component={Card} xs={12} md={3} className={cx(CSS.card, CSS.infected)}>
                     <CardContent>
                         <Typography color="textPrimary" gutterBottom>
-                            Infected
+                            Total Cases
                         </Typography>
                         <Typography variant="h5">
                             <CountUp start={0} end={confirmed.value} duration={2.5} separator=',' />
                         </Typography>
                         <Typography color="textSecondary">
                             {new Date(lastUpdate).toLocaleDateString()} @ {new Date(lastUpdate).toLocaleTimeString()}
-                        </Typography>
-                        <Typography variant="body2">
-                            No. of Infections
                         </Typography>
                     </CardContent>
                 </Grid>
@@ -39,24 +36,18 @@ const Cards = ({ data: {confirmed, recovered, deaths, lastUpdate}}) => {
                         <Typography color="textSecondary">
                             {new Date(lastUpdate).toLocaleDateString()} @ {new Date(lastUpdate).toLocaleTimeString()}
                         </Typography>
-                        <Typography variant="body2">
-                            No. of Recoveries
-                        </Typography>
                     </CardContent>
                 </Grid>
                 <Grid item component={Card} xs={12} md={3} className={cx(CSS.card, CSS.deaths)}>
                     <CardContent>
                         <Typography color="textPrimary" gutterBottom>
-                            Deaths
+                            Total Deaths
                         </Typography>
                         <Typography variant="h5">
                             <CountUp start={0} end={deaths.value} duration={2.5} separator=',' />
                         </Typography>
                         <Typography color="textSecondary">
                             {new Date(lastUpdate).toLocaleDateString()} @ {new Date(lastUpdate).toLocaleTimeString()}
-                        </Typography>
-                        <Typography variant="body2">
-                            No. of Deaths
                         </Typography>
                     </CardContent>
                 </Grid>

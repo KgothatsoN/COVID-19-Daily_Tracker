@@ -12,7 +12,7 @@ const Cards = ({ data: {confirmed, recovered, deaths, lastUpdate}}) => {
     return (
         <div className={CSS.container}>
             <Grid container spacing={3} justify="center">
-                <Grid item component={Card} xs={12} md={3} className={cx(CSS.card, CSS.infected)}>
+                <Grid item component={Card} xs={12} md={3} className={cx(CSS.card, CSS.cases)} style={{padding: '0px'}}>
                     <CardContent>
                         <Typography color="textPrimary" gutterBottom>
                             Total Cases
@@ -24,8 +24,11 @@ const Cards = ({ data: {confirmed, recovered, deaths, lastUpdate}}) => {
                             {new Date(lastUpdate).toLocaleDateString()} @ {new Date(lastUpdate).toLocaleTimeString()}
                         </Typography>
                     </CardContent>
+                    <div className={CSS.slash}>
+                        <div className={CSS.casesTop}></div>
+                    </div>
                 </Grid>
-                <Grid item component={Card} xs={12} md={3} className={cx(CSS.card, CSS.recovered)}>
+                <Grid item component={Card} xs={12} md={3} className={cx(CSS.card, CSS.recovered)} style={{padding: '0px'}} >
                     <CardContent>
                         <Typography color="textPrimary" gutterBottom>
                             Recovered
@@ -37,8 +40,11 @@ const Cards = ({ data: {confirmed, recovered, deaths, lastUpdate}}) => {
                             {new Date(lastUpdate).toLocaleDateString()} @ {new Date(lastUpdate).toLocaleTimeString()}
                         </Typography>
                     </CardContent>
+                    <div className={CSS.slash}>
+                        <div className={CSS.recoveredTop}></div>
+                    </div>
                 </Grid>
-                <Grid item component={Card} xs={12} md={3} className={cx(CSS.card, CSS.deaths)}>
+                <Grid item component={Card} xs={12} md={3} className={cx(CSS.card, CSS.deaths)} style={{padding: '0px'}}>
                     <CardContent>
                         <Typography color="textPrimary" gutterBottom>
                             Total Deaths
@@ -50,6 +56,9 @@ const Cards = ({ data: {confirmed, recovered, deaths, lastUpdate}}) => {
                             {new Date(lastUpdate).toLocaleDateString()} @ {new Date(lastUpdate).toLocaleTimeString()}
                         </Typography>
                     </CardContent>
+                    <div className={CSS.slash}>
+                        <div className={CSS.deathsTop}></div>
+                    </div>
                 </Grid>
             </Grid>
         </div>

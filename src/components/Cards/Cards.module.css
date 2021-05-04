@@ -8,23 +8,49 @@
     margin: 50px 0;
 }
 
+.MuiGrid-spacing-xs-3 > .MuiGrid-item {
+    padding: 0px !important;
+}
+
 .card   {
     margin: 0 2% !important;
-    border-radius: 20px !important;
     box-shadow:  10px 10px 25px -2px rgba(33,150,243,.5) !important;
 }
 
-.infected   {
-    border-bottom: 10px solid rgb(0, 0, 255);
+.cases   {
+    border-top: 10px solid rgb(0, 0, 255);
 }
 
 .deaths   {
-    border-bottom: 10px solid rgb(255, 0, 0);
+    border-top: 10px solid rgb(255, 0, 0);
 }
 
 .recovered   {
-    border-bottom: 10px solid rgb(0, 255, 0);
+    border-top: 10px solid rgb(0, 255, 0);
 }
+
+.slash  {
+    margin: 0 auto ;
+}
+.casesTop {
+    height:0 ;
+    border-width: 0 0 40px 200px ;
+    border-style:solid ;
+    border-color:transparent rgb(0, 0, 255) rgb(0, 0, 255) transparent;
+}
+.recoveredTop {
+    height:0 ;
+    border-width: 0 0 40px 200px ;
+    border-style:solid ;
+    border-color:transparent rgb(0, 255, 0) rgb(0, 255, 0) transparent;
+}
+.deathsTop {
+    height:0 ;
+    border-width: 0 0 40px 200px ;
+    border-style:solid ;
+    border-color:transparent rgb(255, 0, 0) rgb(255, 0, 0) transparent;
+}
+
 
 @media (max-width: 770px) {
     .card {
